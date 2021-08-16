@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<style>
+		.class1 {
+        margin: 350px auto;
+        width: 300px;
+        border-style:double;
+        border-radius: 10px;
+        background: linear-gradient(to top, black, 20%, cyan);
+    }
+
+    body{
+      background-image: url(../static/images/8.jpg);
+    }
+
+    h1{
+      color: blue;
+      font-size: 30px;
+      text-align: center;
+    }
+	</style>
+</head>
+<body>
+  <div class="class1">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <div style="text-align: center">
+          <label for="user">User:&emsp;&emsp;</label>
+          <input type="text" name="user">
+          <br>
+          <label for="password">Password: </label>
+          <input type="password"  name="password">
+          <br>
+          <input type="submit" value="Login">
+          <br>
+          <br>
+        </div>
+      </form>
+  </div>
+
+  
+</div>
+</body>
+</html>
