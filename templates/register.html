@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        .class1 {
+        margin: 350px auto;
+        width: 300px;
+        border-style:double;
+        border-radius: 10px;
+        background: linear-gradient(to left, black, 20%, cyan);
+    }
+
+    body{
+      background-image: url(../static/images/8.jpg);
+    }
+
+    h1{
+      color: blue;
+      font-size: 30px;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="class1">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul style="color: red;">
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <h1>Register</h1>
+        <form action="/register" method="post">
+            <div style="text-align: center">
+                <label for="user">User:&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                <input type="text" name="username">
+                <br>
+                <label for="password">Password:&ensp;&emsp;&emsp;&emsp;</label>
+                <input type="password" name="password">
+                <br>
+                <label for="password_confirm">Confirm password:</label>
+                <input type="password" name="password_confirm">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <br>
+        <span>*Already have an account? <a href="/login">Log In</a></span>
+    </div>
+</body>
+</html>

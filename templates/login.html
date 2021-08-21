@@ -9,7 +9,7 @@
         width: 300px;
         border-style:double;
         border-radius: 10px;
-        background: linear-gradient(to top, black, 20%, cyan);
+        background: linear-gradient(to left, black, 20%, cyan);
     }
 
     body{
@@ -25,6 +25,16 @@
 </head>
 <body>
   <div class="class1">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <ul style="color: red;">
+                  {% for message in messages %}
+                      <li>{{message}}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+      {% endwith %}
+      
       <h1>Login</h1>
       <form action="/login" method="post">
         <div style="text-align: center">
@@ -39,9 +49,7 @@
           <br>
         </div>
       </form>
+      <span stlye="color:red">*Don't have an account yet? <a href="/register">Register</a></span>
   </div>
-
-  
-</div>
 </body>
 </html>
